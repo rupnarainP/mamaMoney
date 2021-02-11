@@ -1,0 +1,1 @@
+insert into Ussd values('#AA1234', null, '27821231234', 0, null);
