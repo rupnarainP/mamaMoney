@@ -19,21 +19,26 @@ public class UssdService {
 
         UssdEntity ussdEntity = ussdRepository.findBySessionId(ussdRequest.getSessionId().trim());
 
-        // for initializing the USSD process
+        // for initializing the USSD process/ Menu #1
         if(ussdRequest.getUserEntry() == null || ussdEntity.getProcessId() == 0){
             //send initial message
+            if(ussdEntity.getProcessId() != 0){
+                new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayErrorMessage(ussdEntity).build();
+            }
 
-            new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayMessage(ussdEntity).build();
+            else{
+                new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayMessage(ussdEntity).build();
 
-            ussdEntity.setProcessId(1);
+                ussdEntity.setProcessId(1);
 
-            ussdRepository.save(ussdEntity);
+                ussdRepository.save(ussdEntity);
+            }
 
             return ussdResponse;
         }
 
         else{
-            //Asking for amount
+            //Asking for amount/ Menu #2
             if(ussdEntity.getProcessId() == 1){
                 if(ussdRequest.getUserEntry() != null){
                     if(ussdRequest.getUserEntry().equalsIgnoreCase(CountryEnum.KENYA.getEntryNumber())) {
@@ -66,7 +71,7 @@ public class UssdService {
                 }
             }
 
-            //Amount and foreign currency code
+            //Amount and foreign currency code/ Menu #3
             if(ussdEntity.getProcessId() == 2){
                 if(ussdRequest.getUserEntry() != null){
                     try{
@@ -90,7 +95,7 @@ public class UssdService {
                 }
             }
 
-            //Thank you message
+            //Thank you message/ Menu #4
             if(ussdEntity.getProcessId() == 3){
                 if(ussdRequest.getUserEntry() != null && ussdRequest.getUserEntry().equalsIgnoreCase("1")){
 

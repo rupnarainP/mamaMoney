@@ -68,7 +68,12 @@ public class MessageTranslator {
 //                            "\n1) Kenya\n2) Malawi");
 //                }
 
-                if(ussdEntity.getProcessId() == 1){
+                if(ussdEntity.getProcessId() == 1 && ussdEntity.getUserEntry() == null){
+                    this.results.setMessage("Please select a valid entry");
+                    this.results.setSessionId(ussdEntity.getSessionId().trim());
+                }
+
+                else if(ussdEntity.getProcessId() == 1){
                     this.results.setMessage("Please select a country to send money to");
                     this.results.setSessionId(ussdEntity.getSessionId().trim());
                 }

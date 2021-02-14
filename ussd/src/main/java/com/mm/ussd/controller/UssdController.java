@@ -13,7 +13,6 @@ public class UssdController {
     UssdService ussdService;
 
     @PostMapping(path="/ussd")
-    @CrossOrigin(origins = "http://localhost:3000")
     public UssdResponse getUser(@RequestBody UssdRequest ussdRequest) {
         // This endpoint accepts a USSD request and returns a USSD response
         return ussdService.getUssd(ussdRequest);
