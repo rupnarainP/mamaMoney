@@ -8,7 +8,7 @@ Developed using:
 <li>Soring Boot v2.4.2</li>
 <li>Maven 3.6.3</li>
 <li>H2 database</li>
-<li>Windows 10</li>
+<li>Windows 10</li><br/>
 
 <b>Build/Run Instructions:</b>
 1. Import project as Maven project.
