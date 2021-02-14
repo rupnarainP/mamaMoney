@@ -24,6 +24,5 @@ Maven 3.6.3
 <b>Testing:</b>
 1. Can use an application like Postman to test the endpoint: "http://localhost:8080/mamamoney/ussd".
 2. In Postman, click on "File", then select "Import".
-3. Postman Collection can be found in "src/test/Postman". 
-4. Drag and drop the postman collection into the window and import it.
+3. Drag and drop the postman collection found in "src/test/Postman" into the window and import it.
 5. Each request is labelled as the Menu screen.
