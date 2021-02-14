@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "b4bd16b7-adc4-4d85-9258-66a4b07ec149",
+		"name": "USSD_MAMA_MONEY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Menu1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mamamoney/ussd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mamamoney",
+						"ussd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mamamoney/ussd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mamamoney",
+						"ussd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mamamoney/ussd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mamamoney",
+						"ussd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mamamoney/ussd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mamamoney",
+						"ussd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
