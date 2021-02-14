@@ -3,6 +3,9 @@
 <b>USSD Service:</b>
 
 Instrucitons are based on Intellij Ultimate 2020.3
+Developed using:
+JDK 11
+Maven 3.6.3
 
 <b>Build/Run Instructions:</b>
 1. Import project as Maven project.
