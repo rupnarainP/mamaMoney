@@ -5,7 +5,9 @@
 Instructions are based on Intellij Ultimate 2020.3
 Developed using:
 JDK 11
+Soring Boot v2.4.2
 Maven 3.6.3
+H2 database
 Windows 10
 
 <b>Build/Run Instructions:</b>
@@ -29,3 +31,7 @@ Windows 10
 5. Each request is labelled as the Menu screen.
 6. To start the process, select the "Menu1" request and then click on the "Send" button.
 7. Under the body tab for each request, you can change the userEntry variable to the applicable options for each menu. 
+8. The H2 console can be opened in a browser of your choice by using this link: http://localhost:8080/h2-console/
+9. The H2 credentials are standard and does not have a password. You can access it by clicking on "Connect"
+10. The database is preloaded with 3 rows for data in the USSD table.
+11. H2 is an in-memory database that will reset all data every time you stop and re-run the Springboot application.
