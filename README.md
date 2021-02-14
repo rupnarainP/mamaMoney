@@ -2,7 +2,7 @@
 
 <b>USSD Service:</b>
 
-Instrucitons are based on Intellij Ultimate 2020.3
+Instructions are based on Intellij Ultimate 2020.3
 Developed using:
 JDK 11
 Maven 3.6.3
