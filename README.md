@@ -6,6 +6,7 @@ Instructions are based on Intellij Ultimate 2020.3
 Developed using:
 JDK 11
 Maven 3.6.3
+Windows 10
 
 <b>Build/Run Instructions:</b>
 1. Import project as Maven project.
@@ -22,7 +23,8 @@ Maven 3.6.3
 3. The application will start within IntelliJ.
 
 <b>Testing:</b>
-1. Can use an application like Postman to test the endpoint: "http://localhost:8080/mamamoney/ussd".
+1. Can use an application like Postman (https://www.postman.com/downloads/) to test the endpoint: "http://localhost:8080/mamamoney/ussd".
 2. In Postman, click on "File", then select "Import".
 3. Select "Upload Files" in Postman. The Postman collection found in "src/test/Postman".
 5. Each request is labelled as the Menu screen.
+6. To start the process, select the "Menu1" request and then click on the "Send" button.
