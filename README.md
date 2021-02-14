@@ -28,3 +28,4 @@ Windows 10
 3. Select "Upload Files" in Postman. The Postman collection found in "src/test/Postman".
 5. Each request is labelled as the Menu screen.
 6. To start the process, select the "Menu1" request and then click on the "Send" button.
+7. Under the body tab for each request, you can change the userEntry variable to the applicable options for each menu. 
