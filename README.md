@@ -2,13 +2,13 @@
 
 <b>USSD Service:</b>
 
-Instructions are based on Intellij Ultimate 2020.3
+Instructions are based on Intellij Ultimate 2020.3 <br/><br/>
 Developed using:
-JDK 11
-Soring Boot v2.4.2
-Maven 3.6.3
-H2 database
-Windows 10
+<li>JDK 11</li>
+<li>Soring Boot v2.4.2</li>
+<li>Maven 3.6.3</li>
+<li>H2 database</li>
+<li>Windows 10</li>
 
 <b>Build/Run Instructions:</b>
 1. Import project as Maven project.
