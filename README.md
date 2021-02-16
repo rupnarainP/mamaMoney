@@ -33,5 +33,5 @@ Developed using:
 7. Under the body tab for each request, you can change the userEntry variable to the applicable options for each menu. 
 8. The H2 console can be opened in a browser of your choice by using this link: http://localhost:8080/h2-console/
 9. The H2 credentials are standard and does not have a password. You can access it by clicking on "Connect"
-10. The database is preloaded with 3 rows for data in the USSD table.
+10. <strike>The database is preloaded with 3 rows for data in the USSD table.</strike>
 11. H2 is an in-memory database that will reset all data every time you stop and re-run the Springboot application.
