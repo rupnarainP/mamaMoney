@@ -6,6 +6,8 @@ import com.mm.ussd.response.UssdResponse;
 import com.mm.ussd.service.UssdService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.text.DecimalFormat;
+
 public class MessageTranslator {
 
     public final UssdResponse results;
@@ -62,11 +64,6 @@ public class MessageTranslator {
 
         public MessageTranslator.MessageTranslatorBuilder displayErrorMessage(UssdEntity ussdEntity) {
             if (ussdEntity != null) {
-//                if (ussdEntity.getProcessId() == 0) {
-//                    this.results.setSessionId(ussdEntity.getSessionId().trim());
-//                    this.results.setMessage("Welcome to Mama Money! Where would you like to send money to?" +
-//                            "\n1) Kenya\n2) Malawi");
-//                }
 
                 if(ussdEntity.getProcessId() == 1 && ussdEntity.getUserEntry() == null){
                     this.results.setMessage("Please select a valid entry");
@@ -88,6 +85,11 @@ public class MessageTranslator {
                     this.results.setSessionId(ussdEntity.getSessionId().trim());
                 }
             }
+
+            else{
+                this.results.setMessage("Invalid session ID or msidn");
+                this.results.setSessionId("");
+            }
             return this;
         }
 
@@ -97,6 +99,8 @@ public class MessageTranslator {
 
         public String currencyConversion(String amount, String foreignCurrencyCode){
             double result = 0.0;
+            DecimalFormat df = new DecimalFormat("#.##");
+
             if(foreignCurrencyCode.equalsIgnoreCase(CountryEnum.KENYA.getForeignCurrencyCode())){
                 result = Double.parseDouble(amount);
                 result = result * CountryEnum.KENYA.getExchangeRate();
@@ -107,7 +111,7 @@ public class MessageTranslator {
                 result = result * CountryEnum.MALAWI.getExchangeRate();
             }
 
-            return result + "";
+            return df.format(result);
         }
     }
 }

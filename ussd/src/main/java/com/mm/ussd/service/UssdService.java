@@ -21,7 +21,10 @@ public class UssdService {
         UssdEntity ussdEntity = ussdRepository.findBySessionId(ussdRequest.getSessionId().trim());
         if(ussdEntity == null){
             if(ussdRequest != null){
-                if(ussdRequest.getSessionId() != null && ussdRequest.getMsisdn() != null){
+                if(ussdRequest.getSessionId() != null
+                        && ussdRequest.getMsisdn() != null
+                        && !ussdRequest.getSessionId().isEmpty()
+                        && !ussdRequest.getMsisdn().isEmpty()){
                     UssdEntity newUssdEntity = new UssdEntity();
                     newUssdEntity.setSessionId(ussdRequest.getSessionId().trim());
                     newUssdEntity.setMsisdn(ussdRequest.getMsisdn().trim());
@@ -39,6 +42,12 @@ public class UssdService {
                     }
 
                     ussdEntity = newUssdEntity;
+                }
+
+                else{
+                    new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayErrorMessage(ussdEntity).build();
+
+                    return ussdResponse;
                 }
             }
         }
@@ -98,13 +107,19 @@ public class UssdService {
             //Amount and foreign currency code/ Menu #3
             if(ussdEntity.getProcessId() == 2){
                 if(ussdRequest.getUserEntry() != null){
+                    String formattedAmount = "";
                     try{
+                        if(ussdRequest.getUserEntry().trim().contains(Character.toString(','))){
+                            ussdRequest.setUserEntry(ussdRequest.getUserEntry().replace(',', '.'));
+                            formattedAmount = ussdRequest.getUserEntry().trim().substring(0, ussdRequest.getUserEntry().trim().indexOf('.') + 3);
+                        }
                         Double.parseDouble(ussdRequest.getUserEntry());
                     }catch (NumberFormatException e){
                         new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayErrorMessage(ussdEntity).build();
                         return  ussdResponse;
                     }
-                    ussdEntity.setUserEntry(ussdRequest.getUserEntry().trim());
+                    formattedAmount = ussdRequest.getUserEntry().trim();
+                    ussdEntity.setUserEntry(formattedAmount);
                     new MessageTranslator.MessageTranslatorBuilder(ussdResponse).displayMessage(ussdEntity).build();
 
                     ussdEntity.setProcessId(3);
