@@ -5,7 +5,7 @@
 Instructions are based on Intellij Ultimate 2020.3 <br/><br/>
 Developed using:
 <li>JDK 11</li>
-<li>Soring Boot v2.4.2</li>
+<li>Spring Boot v2.4.2</li>
 <li>Maven 3.6.3</li>
 <li>H2 database</li>
 <li>Windows 10</li><br/>
