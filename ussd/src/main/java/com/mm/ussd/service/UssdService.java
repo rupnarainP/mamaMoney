@@ -19,6 +19,7 @@ public class UssdService {
         UssdResponse ussdResponse = new UssdResponse();
 
         UssdEntity ussdEntity = ussdRepository.findBySessionId(ussdRequest.getSessionId().trim());
+
         if(ussdEntity == null){
             if(ussdRequest != null){
                 if(ussdRequest.getSessionId() != null
