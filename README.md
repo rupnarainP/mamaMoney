@@ -21,7 +21,7 @@ Developed using:
 
 <b>Alternatively:</b>
 1. Import project as Maven project.
-2. Right click on "UssdAppliction.java" and select "Run UssdApplication".
+2. Right click on "UssdApplication.java" and select "Run UssdApplication".
 3. The application will start within IntelliJ.
 
 <b>Testing:</b>
