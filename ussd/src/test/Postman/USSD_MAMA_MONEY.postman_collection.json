@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b4bd16b7-adc4-4d85-9258-66a4b07ec149",
+		"_postman_id": "617c4d14-fb39-479b-981f-963baaeca74c",
 		"name": "USSD_MAMA_MONEY",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":null\r\n}",
+					"raw": "{\r\n    \"sessionId\":\"#AA9876\",\r\n    \"msisdn\":\"0837020526\",\r\n    \"userEntry\":null\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,7 +41,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"1\"\r\n}",
+					"raw": "{\r\n    \"sessionId\":\"#AA9876\",\r\n    \"msisdn\":\"0837020526\",\r\n    \"userEntry\":\"1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"20\"\r\n}",
+					"raw": "{\r\n    \"sessionId\":\"#AA9876\",\r\n    \"msisdn\":\"0837020526\",\r\n    \"userEntry\":\"20\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +99,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sessionId\":\"#AA1234\",\r\n    \"msisdn\":\"27821231234\",\r\n    \"userEntry\":\"1\"\r\n}",
+					"raw": "{\r\n    \"sessionId\":\"#AA9876\",\r\n    \"msisdn\":\"0837020526\",\r\n    \"userEntry\":\"1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

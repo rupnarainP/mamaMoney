@@ -6,6 +6,7 @@ import com.mm.ussd.repository.UssdRepository;
 import com.mm.ussd.request.UssdRequest;
 import com.mm.ussd.response.UssdResponse;
 import com.mm.ussd.translator.MessageTranslator;
+import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,29 @@ public class UssdService {
         UssdResponse ussdResponse = new UssdResponse();
 
         UssdEntity ussdEntity = ussdRepository.findBySessionId(ussdRequest.getSessionId().trim());
+        if(ussdEntity == null){
+            if(ussdRequest != null){
+                if(ussdRequest.getSessionId() != null && ussdRequest.getMsisdn() != null){
+                    UssdEntity newUssdEntity = new UssdEntity();
+                    newUssdEntity.setSessionId(ussdRequest.getSessionId().trim());
+                    newUssdEntity.setMsisdn(ussdRequest.getMsisdn().trim());
+                    if(ussdRequest.getUserEntry() != null){
+                        newUssdEntity.setUserEntry(ussdRequest.getUserEntry().trim());
+                    }
+                    newUssdEntity.setProcessId(0);
+
+                    try {
+                        ussdRepository.save(newUssdEntity);
+                    }
+                    catch (HibernateException e)
+                    {
+                        throw new HibernateException(e);
+                    }
+
+                    ussdEntity = newUssdEntity;
+                }
+            }
+        }
 
         // for initializing the USSD process/ Menu #1
         if(ussdRequest.getUserEntry() == null || ussdEntity.getProcessId() == 0){

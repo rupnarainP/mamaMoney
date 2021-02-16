@@ -1,12 +1,15 @@
 package com.mm.ussd.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name="Ussd")
 public class UssdEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String sessionId;
 
     private String msisdn;
